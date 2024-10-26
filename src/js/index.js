@@ -24,23 +24,23 @@ const renderSetIntervaloTiempo = () =>{
     app.render(
     <>
         <SecondsCounter counter={seconds} />
-        <div className="row w-25  justify-content-center align-items-center" style={{ position: "relative", paddingTop: "120px", margin: "auto" }}>
+        <div className="row w-25 d-flex justify-content-center align-items-center" style={{ position: "relative", paddingTop: "250px", margin: "auto" }}>
             <input id="setTimeIngresado" className="" onChange={ (event) => {
                 seconds = event.target.value;
             }}
             placeholder="Ingresar cant. de segundos para la cuenta regresiva" type="number"/>
             <div className="btn-group row" role="group" aria-label="Basic example">
-                    <button onClick={() => clearInterval(intervaloTiempo)} type="button" className="btn btn-secondary">Parar</button>
+                    <button onClick={() => clearInterval(intervaloTiempo)} type="button" className="btn btn-secondary mt-2">Parar</button>
                     <button onClick={() => {
                         seconds = 0;
                         document.getElementById("setTimeIngresado").value = undefined;
-                        }} type="button" className="btn btn-secondary">Reiniciar</button>
+                        }} type="button" className="btn btn-secondary mt-2">Reiniciar</button>
                     <button onClick={() => {
                         intervaloTiempo = setInterval(renderSetIntervaloTiempo, 1000)
-                    }} type="button" className="btn btn-secondary">Resumir</button>
+                    }} type="button" className="btn btn-secondary mt-2">Resumir</button>
                     <button onClick={() => {
                         incrementando = !incrementando;
-                    }} type="button" className="btn btn-secondary">Cuenta Regresiva</button>
+                    }} type="button" className="btn btn-secondary mt-2">Cuenta Regresiva</button>
             </div>
         </div>
     </>) 
